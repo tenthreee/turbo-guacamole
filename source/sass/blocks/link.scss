@@ -1,0 +1,16 @@
+.link {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+  color: $color-primary-700;
+  text-decoration: none;
+
+  transition: color $trans-default, outline-offset $trans-default;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      color: $color-primary-800;
+    }
+  }
+}

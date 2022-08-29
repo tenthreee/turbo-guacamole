@@ -4,61 +4,48 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Описание проекта">
-    <title>ProjectName</title>
+    <meta name="description" content="Nice Form For Evil Martians">
+    <title>Nice Form</title>
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <div class="container"></div>
-      </header>
-      <main>
-        <section class="intro">
-          <div class="container">
-            <h1>Тестовая страница.</h1>
-            <p>На данной странице показан пример модальных окон.</p>
-            <p>Перед началом разработки не забудьте удалить всё содержимое &#8249;main&#8250;&#8249;&#8260;main&#8250;.</p>
-            <p><a class="btn" href="#" data-open-modal="feedback">modal--feedback link</a></p>
-            <p><a class="btn" href="#" data-open-modal="success">modal--success link</a></p>
+      <main class="container">
+        <section class="login" data-validate>
+          <div class="login__image">
+            <img src="./img/svg/logo-main.svg" alt="Main Logo.">
           </div>
+
+          <h1 class="login__title">Log in to your account</h1>
+          <p class="login__welcome">Welcome back! Please enter your details.</p>
+
+          <form class="login__form" action="https://echo.htmlacademy.ru/" method="post">
+            <div class="login__input" data-validate-type="email">
+              <label for="user-email">Email</label>
+              <input type="email" name="user-email" id="user-email" placeholder="Enter your email" required>
+              <span class="login__input-error">Please enter your email address</span>
+            </div>
+
+            <div class="login__input" data-validate-type="text">
+              <label for="user-password">Password</label>
+              <input type="password" name="user-password" id="user-password" placeholder="••••••••" required>
+              <span class="login__input-error">Please enter your password</span>
+            </div>
+
+            <div class="login__checkbox">
+              <input type="checkbox" name="user-remember" id="user-remember">
+              <label for="user-remember">Remember for 30 days</label>
+              <a class="link login__forgot" href="#">Forgot password</a>
+            </div>
+
+            <button class="btn login__btn" type="submit">Sign in</button>
+          </form>
+
+          <p class="login__signup">Don’t have an account? <a class="link" href="#">Sign up</a></p>
         </section>
       </main>
-      <footer>
-        <div class="container"></div>
-      </footer>
     </div>
 
-    <!-- Модалки -->
-    <div class="modal modal--preload" data-modal="feedback">
-      <div class="modal__wrapper">
-        <div class="modal__overlay" data-close-modal></div>
-        <div class="modal__content">
-          <p class="modal__description">Обычная модалка</p>
-          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
-            <svg width="15" height="15">
-              <use xlink:href="img/sprite_auto.svg#icon-close"></use>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal modal--preload modal--fit-content modal--no-scale" data-modal="success">
-      <div class="modal__wrapper">
-        <div class="modal__overlay" data-close-modal></div>
-        <div class="modal__content">
-          <p class="modal__description">Размер этой модалки зависит от ширины контента,<br> отключена анимация-скейл</p>
-          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
-            <svg width="15" height="15">
-              <use xlink:href="img/sprite_auto.svg#icon-close"></use>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>
   </body>
 </html>

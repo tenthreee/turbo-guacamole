@@ -1,0 +1,192 @@
+.login {
+  width: 360px;
+
+  display: flex;
+  flex-direction: column;
+
+  @include vp-424 {
+    width: 100%;
+  }
+}
+
+.login__image {
+  margin: 0 0 24px;
+  align-self: center;
+}
+
+.login__title {
+  margin: 0 0 12px;
+  align-self: center;
+
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.3;
+
+  @include vp-424 {
+    font-size: 24px;
+  }
+}
+
+.login__welcome {
+  margin: 0 0 32px;
+  align-self: center;
+
+  color: $color-gray-500;
+}
+
+.login__form {
+  margin: 0 0 32px;
+}
+
+.login__input {
+  margin: 0 0 12px;
+
+  label {
+    display: block;
+    margin: 0 0 4px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px 16px;
+
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    background-color: $color-default-white;
+    border: 1px solid $color-gray-300;
+    border-radius: 8px;
+
+    transition: background-color 10000000s ease-out, outline-offset $trans-default;
+
+    &::placeholder {
+      font: inherit;
+      color: $color-gray-500;
+
+      transition: color $trans-default;
+    }
+
+    &:disabled {
+      background-color: $color-gray-50;
+    }
+
+    &:hover,
+    &:focus {
+      &::placeholder {
+        color: $color-gray-900;
+      }
+    }
+
+    &:focus {
+      outline-offset: 4px;
+    }
+  }
+
+  &.is-invalid {
+    input {
+      border-color: $color-error;
+    }
+
+    .login__input-error {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.login__input-error {
+  font-size: 14px;
+  line-height: 1.4;
+  color: $color-error;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: opacity $trans-default;
+}
+
+.login__checkbox {
+  margin: 0 0 24px;
+
+  display: flex;
+  align-items: center;
+
+  input {
+    position: relative;
+    margin: 0 4px 0 0;
+
+    appearance: none;
+
+    display: grid;
+    place-items: center;
+    width: 16px;
+    height: 16px;
+
+    background-color: $color-default-white;
+    border: 1px solid $color-gray-300;
+    border-radius: 4px;
+    cursor: pointer;
+
+    transition: background-color $trans-default, border-color $trans-default, outline-offset $trans-default;
+
+    &::after {
+      position: absolute;
+      content: '✓';
+      top: 50%;
+      left: 50%;
+
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 12px;
+      color: transparent;
+
+      transform: translate(-50%, -50%);
+      transition: color $trans-default;
+    }
+
+    &:checked {
+      background-color: $color-primary-100;
+      border-color: $color-primary-600;
+
+      &::after {
+        color: $color-primary-600;
+      }
+    }
+
+    &:disabled {
+      background-color: $color-gray-100;
+      pointer-events: none;
+    }
+  }
+
+  label {
+    margin: 0 12px 0 0;
+    flex-shrink: 0;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+.login__forgot {
+  margin-left: auto;
+
+  @include vp-374 {
+    text-align: right;
+  }
+}
+
+.login__btn {
+  width: 100%;
+}
+
+.login__signup {
+  margin: 0;
+  align-self: center;
+
+  font-size: 14px;
+  line-height: 1.4;
+}
